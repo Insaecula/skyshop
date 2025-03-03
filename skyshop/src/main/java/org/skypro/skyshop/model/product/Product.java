@@ -29,4 +29,9 @@ public class Product implements Searchable {
     public String getContentType() {
         return "product";
     }
+
+    @Override
+    public String getSearchTerm() {
+        return "";
+    }
 }
