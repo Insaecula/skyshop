@@ -3,6 +3,8 @@ import org.skypro.skyshop.model.article.Article;
 import org.skypro.skyshop.model.product.Product;
 import org.skypro.skyshop.service.StorageService;
 import org.springframework.web.bind.annotation.GetMapping;
+import java.util.Collection;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Collection;
@@ -24,5 +26,10 @@ public class ShopController {
     @GetMapping("/articles")
     public Collection<Article> getAllArticles() {
         return storageService.getAllArticles();
+    }
+
+    @GetMapping("/search")
+    public Collection<Article> searchArticles(@RequestParam String query) {
+        return storageService.searchArticles(query);
     }
 }
