@@ -30,4 +30,4 @@ public class SearchResult {
                 searchable.getContentType()
         );
     }
-}
+}//

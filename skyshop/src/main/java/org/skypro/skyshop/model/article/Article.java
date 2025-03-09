@@ -17,7 +17,7 @@ public class Article implements Searchable{
         this.title = title;
         this.content = content;
     }
-
+//
     @Override
     public UUID getId() {
         return id;
