@@ -24,9 +24,12 @@ public class Product implements Searchable {
     }
 
 
-
     @Override
     public String getContentType() {
         return "product";
+    }
+
+    public double getPrice() {
+        return 0;
     }
 }
