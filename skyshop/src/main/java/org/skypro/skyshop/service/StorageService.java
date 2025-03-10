@@ -16,7 +16,7 @@ public class StorageService {
     public StorageService() {
         initializeTestData();
     }
-//
+
 
     private void initializeTestData() {
         Product product = new Product(UUID.randomUUID(), "Laptop", "Electronics", "High-end gaming laptop");

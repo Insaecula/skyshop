@@ -6,5 +6,5 @@ public interface Searchable {
     UUID getId();
     String getName();
     String getContentType();
-
+//
 }
