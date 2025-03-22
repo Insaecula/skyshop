@@ -7,7 +7,7 @@ public class Article implements Searchable{
     public String getName() {
         return "";
     }
-//
+
     private final UUID id;
     private final String title;
     private final String content;

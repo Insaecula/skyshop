@@ -8,7 +8,7 @@ public class Product implements Searchable {
     private final UUID id;
     private final String name;
 
-//
+
     public Product(UUID id, String laptop, String name, String searchTerm) {
         this.id = id;
         this.name = name;
