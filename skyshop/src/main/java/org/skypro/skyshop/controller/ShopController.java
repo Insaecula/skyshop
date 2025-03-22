@@ -15,7 +15,7 @@ public class ShopController {
     public ShopController(StorageService storageService) {
         this.storageService = storageService;
     }
-
+//
     @GetMapping("/products")
     public Collection<Product> getAllProducts() {
         return storageService.getAllProducts();
