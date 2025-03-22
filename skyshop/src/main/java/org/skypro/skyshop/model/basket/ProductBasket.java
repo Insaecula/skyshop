@@ -1,11 +1,13 @@
 package org.skypro.skyshop.model.basket;
 
+import org.springframework.web.context.annotation.SessionScope;
+
 import java.io.Serializable;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
-
+@SessionScope
     public class ProductBasket implements Serializable {
 
         private final Map<UUID, Integer> products = new HashMap<>();
