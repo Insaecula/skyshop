@@ -9,10 +9,18 @@ public class Product implements Searchable {
     private final String name;
 
 
-    public Product(UUID id, String laptop, String name, String searchTerm) {
+    public Product(UUID id, String laptop, String electronics, String name) {
+        this.id = id;
+        this.name = name;
+
+    }
+
+    public Product(String number, String laptop, int i, UUID id, String name) {
+
         this.id = id;
         this.name = name;
     }
+
 
     @Override
     public UUID getId() {

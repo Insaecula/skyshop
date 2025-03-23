@@ -1,5 +1,7 @@
 package org.skypro.skyshop.model.basket;
 
+import org.skypro.skyshop.model.product.Product;
+import org.skypro.skyshop.service.StorageService;
 import org.springframework.web.context.annotation.SessionScope;
 
 import java.io.Serializable;
@@ -13,7 +15,7 @@ import java.util.UUID;
         private final Map<UUID, Integer> products = new HashMap<>();
 
 
-        public void addProduct(UUID id) {
+        public void addProduct(Product id) {
             products.put(id, products.getOrDefault(id, 0) + 1);
         }
 
@@ -21,5 +23,9 @@ import java.util.UUID;
         public Map<UUID, Integer> getProducts() {
             return Collections.unmodifiableMap(products);
         }
+
+    public void addProduct(String number, StorageService storageServiceMock) {
+
     }
+}
 
