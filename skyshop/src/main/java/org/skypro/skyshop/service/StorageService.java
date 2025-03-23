@@ -1,15 +1,15 @@
 package org.skypro.skyshop.service;
+import org.skypro.skyshop.Error.NoSuchProductException;
 import  org.skypro.skyshop.model.article.Article;
 import org.skypro.skyshop.model.product.Product;
 import org.springframework.stereotype.Service;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
+
 @Service
 public class StorageService {
 
+    private final Map<String, Product> products = new HashMap<>();
     private final Map<UUID, Product> productMap = new HashMap<>();
     private final Map<UUID, Article> articleMap = new HashMap<>();
 
@@ -26,11 +26,23 @@ public class StorageService {
         articleMap.put(article.getId(), article);
     }
 
+
     public Collection<Product> getAllProducts() {
         return productMap.values();
     }
 
+
     public Collection<Article> getAllArticles() {
         return articleMap.values();
+    }
+
+
+    public Optional<Product> getProductById(UUID id) {
+        return Optional.ofNullable(productMap.get(id));
+    }
+
+    public Product getProductById(String id) {
+        return Optional.ofNullable(products.get(id))
+                .orElseThrow(() -> new NoSuchProductException("Товар с ID " + id + " не найден."));
     }
 }
